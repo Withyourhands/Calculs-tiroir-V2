@@ -1,0 +1,19 @@
+@media print {
+  /* Masquer les éléments qui ne doivent pas être affichés lors de l'impression */
+  .print-hide,
+  #calculate-button,
+  #print-button,
+  .not-functional {
+    display: none !important;
+  }
+
+  /* Afficher le tableau de résultats */
+  .print-table-n3 {
+    display: table !important;
+  }
+
+  /* Optionnel: Modifier la mise en page pour l'impression si nécessaire */
+  body {
+    margin: 0; /* Par exemple, réduire les marges pour économiser de l'espace sur la page imprimée */
+  }
+}

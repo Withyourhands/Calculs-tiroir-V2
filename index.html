@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculs de découpes pour tiroirs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="print.css" media="print">
+  </head>
+<body>
+  <div class="container">
+
+    <div id="accueil">
+      <h1>Calculs de découpes pour tiroirs</h1>
+      <div id="slider" class="slider"></div>
+
+      <div class="image-container">
+        <img class="logo logo-fixed" src="images/1.png" alt="Logo">
+      </div>
+    <p class="centered">Ce tableau est conçu pour des dimensions en millimètres
+    </p>
+
+    <h2>Tableau N°1: Dimensions de la réservation</h2>
+    <table>
+      <tr>
+        <th>Hauteur</th>
+        <th>Largeur</th>
+        <th>Profondeur</th>
+        <th>Epaisseur du bois</th>
+      </tr>
+      <tr>
+        <td><input type="number" id="hauteur"></td>
+        <td><input type="number" id="largeur"></td>
+        <td><input type="number" id="profondeur"></td>
+        <td><input type="number" id="epaisseurBois"></td>
+      </tr>
+    </table>
+
+    <div class="image-container">
+      <div class="image-pair">
+        <div class="image-subcontainer">
+          <img src="images/2.jpg" alt="Image 2">
+        </div>
+        <div class="image-subcontainer">
+          <img src="images/3.jpg" alt="Image 3">
+        </div>
+      </div>
+      <div class="image-pair">
+        <div class="image-subcontainer">
+          <img src="images/4.jpg" alt="Image 4">
+        </div>
+        <div class="image-subcontainer">
+          <img src="images/5.jpg" alt="Image 5">
+        </div>
+      </div>
+      <div class="image-pair">
+        <div class="image-subcontainer">
+          <img src="images/6.jpg" alt="Image 6">
+        </div>
+        <div class="image-subcontainer">
+          <img src="images/7.jpg" alt="Image 7">
+        </div>
+      </div>
+      <div class="image-pair">
+        <div class="image-subcontainer">
+          <img src="images/8.jpg" alt="Image 8">
+        </div>
+        <div class="image-subcontainer">
+          <img src="images/9.jpg" alt="Image 9">
+        </div>
+      </div>
+    </div>
+<p class="centered">Veuillez renseigner les données ci-dessous afin d'obtenir les dimensions de découpe pour les divers éléments de vos tiroirs.  
+</p>
+    <h2>Tableau N°2: Vos tiroirs</h2>
+    <table>
+      <tr>
+        <th>Nombre de tiroirs</th>
+        <td><input type="number" id="nombreTiroirs"></td>
+      </tr>
+      <tr>
+        <th>Espace entre les tiroirs, <span class="not-functional">* Attention ! Que si vous avez plusieurs tiroirs</span></th>
+        <td><input type="number" id="espaceTiroirs"></td>
+      </tr>
+      <tr>
+        <th>Espace sous le tiroir (DU BAS)
+        </th>
+        <td><input type="number" id="espaceSousTiroir"></td>
+      </tr>      
+      <tr>
+        <th>Espace entre le tiroir et le fond de la réservation</th>
+        <td><input type="number" id="espaceFond"></td>
+      </tr>
+      <tr>
+        <th>Espace entre le tiroir (DU HAUT) et le haut de la réservation</th>
+        <td><input type="number" id="espaceHaut"></td>
+      </tr>
+      <tr>
+        <th>Espace entre la façade et la réservation, <span class="not-functional">* Uniquement pour les tiroirs encastrés</span></th>
+        <td><input type="number" id="espaceFacade"></td>
+      </tr>
+      <tr>
+        <th>Epaisseur du bois <span class="not-functional">* Bois utilisé pour la fabrication de vos tiroirs</span></th>
+        <td><input type="number" id="epaisseurBois2"></td>
+      </tr>
+      <tr>
+        <th>Epaisseur des glissières</th>
+        <td><input type="number" id="epaisseurGlissieres"></td>
+      </tr>
+      <tr>
+        <th>Epaisseur de la façade</th>
+        <td><input type="number" id="epaisseurFacade"></td>
+      </tr>
+      <tr>
+        <th>Tiroir en applique</th>
+        <td><input type="checkbox" id="tiroirApplique"></td>
+      </tr>
+      <tr>
+        <th>Tiroir encastré</th>
+        <td><input type="checkbox" id="tiroirEncastre"></td>
+      </tr>
+    </table>
+
+    
+    <h2>Tableau N°3: Résultats</h2>
+    <table class="print-table-n3">
+      
+        <th>Désignation</th>
+        <th>Hauteur</th>
+        <th>Largeur</th>
+        <th>Nombre</th>
+        
+        
+      <tr>
+        <th>Faces avant et arrière</th>
+        <td id="resultatHauteurFaces"></td>
+        <td id="resultatLargeurFaces"></td>
+        <!-- Ajoutez la nouvelle cellule pour la colonne "Nombre" -->
+        <td id="resultatNombreFaces"></td>
+      </tr>
+      <tr>
+        <th>Côtés</th>
+        <td id="resultatHauteurCotes"></td>
+        <td id="resultatLargeurCotes"></td>
+        <!-- Ajoutez la nouvelle cellule pour la colonne "Nombre" -->
+        <td id="resultatNombreCotes"></td>
+      </tr>
+      <tr>
+        <th>Façade</th>
+        <td id="resultatHauteurFacade"></td>
+        <td id="resultatLargeurFacade"></td>
+        <!-- Ajoutez la nouvelle cellule pour la colonne "Nombre" -->
+        <td id="resultatNombreFacade"></td>
+      </tr>
+      <tr>
+        <th>Fond</th>
+        <td id="resultatHauteurFond"></td>
+        <td id="resultatLargeurFond"></td>
+        <!-- Ajoutez la nouvelle cellule pour la colonne "Nombre" -->
+        <td id="resultatNombreFond"></td>
+      </tr>
+    </table>
+    
+    </div>
+
+  <button class="button-calculate" id="calculate-button">Calculer</button>
+
+    <p class="centered">Les dimensions du fond du tiroir sont prévues pour être encastrées de 5 mm sur la face avant et arrière, ainsi que sur les côtés.
+    </p>
+
+    <button class="button-print" id="print-button">Imprimer</button>
+    <footer class="print-hide"></footer>
+    <footer>
+      <!-- Vos autres éléments de footer -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/p/WithYourHands-100054512692711/?paipv=0&eav=AfapJoFFXwclcuhfkBvJbUoRIHpvOHYoUNyfv-6utFR9nE3wh49aB0tAV0z5ckc02gA&_rdr" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/withyourhandsdino/?hl=fr" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@withyourhands" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
